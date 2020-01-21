@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bcc6e6f3fe.js"></script>
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#330867">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#330867">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#330867">
+
+    <style>
+      /* Change Selection Text Color When Highlighting */ 
+      ::-moz-selection { background-color: #ff000081; 
+      color: #fff; } 
+      ::selection { background-color: #ff000081; 
+      color: #fff; }
+    </style>
+
+    <title>Netwizard | {{title}}</title>
+
+</head>
+
+<body style="
+background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+display : block;
+background-attachment:fixed;
+height:100vh;
+margin:0; padding: 0;
+padding-top:20px;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">
+    <!--Navabar-->
+    <nav class="navbar navbar-expand-sm navbar-dark mr-auto justify-content-center align-self-center" style="padding: auto;padding-left: 100px;margin-right:0;padding-top: 5px;">
+        <!--Brand-->
+        <a class="navbar-brand mx-auto m-0 p-0" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 36px;" href="/">Netwizard</a>
+
+        <!--Toggle-->
+        <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" style="margin-right : 10px;" data-toggle="collapse" data-target="#navlinks">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navlinks -->
+        <div class="collapse navbar-collapse ml-auto" style="padding-right : 100px;" id="navlinks">
+        <ul class="navbar-nav ml-auto justify-content-center" style="margin-top:auto; font-family: 'ZCOOL XiaoWei', serif; font-size: 16px;text-align: center;">
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 20px; padding-right: 20px; color :#ffffff;" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 20px; padding-right: 20px; color :#ffffff;" href="/contact">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 20px; padding-right: 20px; color :#ffffff;" href="/about">About Us</a>
+          </li>
+
+          {{#if user}}
+          <li>
+             <a class="btn btn-danger navbar-btn" onclick="location.href='/logout';" style="color:#fff;font-family: 'ZCOOL XiaoWei', serif;font-size: 16px;margin-right:20px"><i class="fas fa-sign-out-alt" style="padding-right: 5px;"></i>Logout</a>
+          </li>
+          <li>
+            <a class="btn btn-info navbar-btn" onclick="location.href='/dashboard';" style="color:#fff;font-family: 'ZCOOL XiaoWei', serif;font-size: 16px;margin-right:20px"><i class="fa fa-user" style="padding-right:5px;" ria-hidden="true"></i>Dashboard</a>
+          </li>
+
+          {{else}}          
+          <li>
+             <a class="btn btn-success navbar-btn" onclick="location.href='/signin';" style="color:#fff;font-family: 'ZCOOL XiaoWei', serif;font-size: 16px;margin-right:20px"><i class="fas fa-sign-in-alt" style="padding-right: 5px;"></i>Log In</a>
+          </li>
+          <li>
+            <a style="color:#fff;font-family: 'ZCOOL XiaoWei', serif;font-size: 16px;" onclick="location.href='/signup';" class="btn btn-primary navbar-btn"><i class="fas fa-user-plus" style="padding-right: 5px;"></i>Registration</a>
+          </li>
+          {{/if}}
+        </ul>
+        
+        </div>
+      <!-- Navlinks End -->    
+    </nav>
+
+    <hr style="  border:0;
+                 height : 2px;
+                 width : 90%;
+                 background: linear-gradient(to right, rgba(51,8,103,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 75%, rgba(51,8,103,1) 100%);">
+    <!--Navabar End-->
+{{#if isMod}}
+    <ul class="nav nav-pills mx-auto justify-content-center p-2">
+  <li class="nav-item p-1">
+    <a class="nav-link active" href="/mod/domain">ADD Question</a>
+  </li>
+  <li class="nav-item p-1">
+    <a class="nav-link active" href="/mod/course">ADD Course</a>
+  </li>
+  <li class="nav-item p-1">
+    <a href="/mod/unVerMentors" class="nav-link active">UnVerified Mentors</a>
+  </li>
+  <li class="nav-item p-1">
+    <a class="nav-link active" href="/mod/batchCourse">View Batch of Courses</a>
+  </li>
+  <li class="nav-item p-1">
+    <a class="nav-link active" href="/mod/activeCourse">Active Courses</a>
+  </li>
+  <li class="nav-item p-1">
+    <a class="nav-link active" href="/mod/deactiveCourse">Deactive Courses</a>
+  </li>
+</ul>
+{{/if}}
+
+<!--sub navbar for mentor  -->
+
+{{#if ismentor}}
+    <ul class="nav nav-pills mx-auto justify-content-center p-2">
+  <li class="nav-item p-1">
+    <a class="nav-link active" href="/mentor/newBatchAllotted">New Batch Allotted</a>
+  </li>
+  <li class="nav-item p-1">
+    <a class="nav-link active" href="/mentor/activeBatch">Active Batch</a>
+  </li>
+  <li class="nav-item p-1">
+    <a class="nav-link active" href="/mentor/viewBatch">View Active Batches</a>
+  </li>
+  <li class="nav-item p-1">
+    <a class="nav-link active" href="/mentor/viewDeactiveBatch">view Deactive Batches</a>
+  </li>
+</ul>
+{{/if}}
+
+    <!--Content-->
+<div class="container align-middle" style="min-height:82vh;">
+
+  <div>
+      {{!-- flash msg --}}
+
+      {{#if success_msg}}
+      <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{success_msg}}
+      </div>
+      {{/if}}    
+
+      {{#if errror_msg}}
+      <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{errror_msg}}
+      </div>
+    
+      {{/if}}    
+
+      {{#if error}}
+      <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{error}}
+      </div>
+      
+      {{/if}}    
+
+    </div>
+
+    {{{body}}}
+
+</div>
+    <!-- Content End -->   
+
+
+
+    <!-- Footer -->
+    <footer class="footer font-small footer-copyright text-center py-3" style="background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);">
+      © 2019 Copyright:
+      <a href="/"> Netwizard </a>
+    </footer>
+    <!-- Footer End -->
+</body>
+</html>

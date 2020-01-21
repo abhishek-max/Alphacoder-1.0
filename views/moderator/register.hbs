@@ -1,0 +1,101 @@
+<!-- Links -->
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+<!-- #region  Style -->
+<style>
+    .inrad {
+        border-radius: 10px;
+    }
+
+    .error {
+        padding-top: 2%;
+        color : red;
+    }
+</style>
+<!-- #endregion -->
+
+<!-- #region FORM -->
+<div class="container font-weight-bold mt-4" style="border-radius:25px; margin-bottom:20px;background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);font-family: 'Raleway', sans-serif; font-size :18px;width : 70%;padding:4% 8%;margin-top:auto;background-color:white;">
+    
+    <!-- #region FORM BRAND -->
+    <h1 class="mx-auto text-center" style="padding-bottom:5%;">Moderator Registration</h1>
+    <!-- #endregion -->
+        <form name="moderatorRegister" id="moderatorRegister" class="mx-auto" action="/mod/register" style="width:80%;" method="POST">
+        <!-- NAME -->
+        <div class="form-group">
+            <label for="name">Name</label>
+         <input type="text" name="name" class="form-control form-control-sm inrad" id="name" placeholder="Enter Full Name...">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control form-control-sm inrad" id="email" placeholder="Enter Email">
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+         <label for="pass1">Password</label>
+         <input type="password" name="pass1" class="form-control form-control-sm inrad"  id="pass1" placeholder="Password">
+         <small id="passhelp" class="form-text text-muted" >
+            At least 8 characters and 1 digit
+         </small>
+        </div>
+
+        <!-- Re-Enter Password -->
+        <div class="form-group">
+         <label for="pass2">Re-Enter Password</label>
+         <input type="password" name="pass2" class="form-control form-control-sm inrad" onkeyup="Check();" id="pass2" placeholder="Password">
+         <span id="message" class="form-text"></span>
+        </div>
+
+        <!-- Mobile1 -->
+        <div class="form-group">
+          <label>Mobile</label>
+          <input type="text" name="mobile1" class="form-control form-control-sm inrad" id="mobile1" placeholder="Enter Mobile Number" >
+          
+        </div>
+
+        <!-- Mobile2 -->
+        <div class="form-group">
+          <label>Mobile</label>
+          <input type="text" name="mobile2" class="form-control form-control-sm inrad" id="mobile2" placeholder="Enter Alternate Mobile Number" >
+          <small id="optional" class="form-text text-muted" >
+            Optional
+         </small>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label>Residential Address</label>
+          <textarea name="address" class="form-control form-control-sm inrad" id="message" placeholder="Enter Address .." width="100%" cols="40" rows="5"></textarea>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control form-control-sm inrad" name="gender" id="gender">
+                <option>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+
+
+         <!-- Submit Button -->        
+        <button style="margin-top:5px;width:100%" type="submit" class="btn btn-success">Register</button>        
+     
+        <!-- Terms of service -->
+        <hr>
+        <p class="text-center">By clicking
+        <em>Sign up</em> you agree to our <a href="#<!--place your target file in the place of #-->" target="_blank">terms of service</a></p>
+    </form>
+
+    <!-- #region Validation-->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="/js/jqueryValidationA2.js"></script>
+    <!-- #endregion Validation -->
+
+    <!-- FORM END -->
+</div>

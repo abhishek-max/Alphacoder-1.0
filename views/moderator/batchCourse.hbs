@@ -1,0 +1,13 @@
+<div class="container p-4" style="background-color:rgba(0, 0, 0, 0.25);
+                                    border-radius:15px;
+                                    width:80%;
+                                    min-height: 80vh;">
+    <h2 class="h2 text-light text-center">Existing Batch of Course Offered</h2>
+    <hr>
+{{#each list}}
+    <a class="btn btn-primary">{{this.batch_name}} (ID: {{this.batch_id}})</a>
+{{/each}}
+<br><br>
+<div class="text-right"><a class="btn btn-success" href='/mod/addBatch'>+ Add a New Batch</a></div>
+</div>
+

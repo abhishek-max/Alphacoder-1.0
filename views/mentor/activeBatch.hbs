@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row justify-content-between px-auto">
+
+{{#each list}}
+
+<a class="btn" href="assignment/{{this.batch_id}}">
+    <div class="card border border-secondary" style="border-radius:15px;width: 65rem;background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);">
+    
+    <div class="card-body">
+    <h4 class="card-title" style="text-align: center"><strong style="font-weight: bolder !important">Batch Name:</strong> {{this.batch_name}}</h5><hr>
+    <h6 class="card-subtitle mb-3" style="text-align:left !important;font-weight: 500;color:black !important"><strong style="font-weight: bolder !important">Starting Date:</strong>{{this.start_date}}</h6>
+    <h6 class="card-subtitle mb-3 text-muted" style="text-align:left !important;font-weight: 500;color:black !important"><strong style="font-weight: bolder !important">Ending Date:</strong>{{this.end_date}}</h6>
+    <h6 class="card-subtitle mb-3 text-muted" style="text-align:left !important;font-weight: 500;color:black !important"> <strong style="font-weight: bolder !important">Batch ID:</strong>{{this.batch_id}}</h6>
+    
+    
+  </div>
+  
+</div>
+</a>
+</div>
+{{/each}}
+</div>
+</div>
+{{!-- <div class="container">
+    
+    <ol>
+{{#each list}}
+<div class="jumbotron" style="width: 1000px"></div>
+    <li>
+       
+            <a href="" class="btn">
+                
+                    <ul class="mx-auto">   
+                        <li>Starting Date:     {{this.start_date}}</li>
+                        <li>End Date:{{this.end_date}}</li>
+                        <li>Batch ID:{{this.batch_id}}</li>
+                        <li>Batch Name:{{this.batch_name}}</li>
+                    </ul>
+                
+            </a>
+       
+    </li>
+</div>
+{{/each}}
+</ol>
+</div> --}}

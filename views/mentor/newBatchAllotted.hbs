@@ -1,0 +1,38 @@
+<div class="container">
+        <ol>
+{{#each list}}
+
+    <div class="jumbotron" style="height: 50%">
+    
+        <li><br>
+         <ul style="list-style-type:circle">
+             <li>Batch Name : {{this.batch_name}}</li>
+             <li>Batch ID : {{this.batch_id}}</li>
+             <li>Start Date : {{this.start_date}}</li>
+             <li>End Date : {{this.end_date}}</li>
+         </ul>
+             
+        <form name="UpdateBatch" id="UpdateBatch" class="mx-auto" action="/mentor/newBatchAllotted" method="POST" style="width:80%;">
+           
+              
+             
+        <!-- NAME -->
+        <div class="form-group d-none">
+            
+         <input type="email" name="email" value="{{this.email}}" class="form-control form-control-sm inrad" id="account">
+        </div>
+        <div class="form-group d-none">
+            
+         <input type="text" name="account" value="true" class="form-control form-control-sm inrad" id="account">
+        </div>
+        <button style="margin-right:5px;width:20%;" type="submit" class="btn btn-success pull-right" name="value" value="{{this.batch_id}}">Activate</button> 
+        </li>
+        
+</form>
+   
+    
+    </div>
+
+{{/each}}
+</ol>
+</div>

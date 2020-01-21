@@ -1,0 +1,79 @@
+<div class="container p-4" style="background-color:rgba(0, 0, 0, 0.25);
+                                    border-radius:15px;
+                                    width:80%;
+                                    min-height: 80vh;">
+    <h2 class="h2 text-light text-center">Existing Active Courses</h2>
+    <hr>
+    {{#each list}}
+        <a class="btn btn-light"  style="color: black !important">
+            <ul style="text-align: left !important">
+                <li><strong>Course Name:</strong>{{this.coursename}}</li>
+                <li><strong>Domains:</strong>{{this.domains}}</li>
+                <li><strong>Course Id:</strong>{{this.courseID}}</li>
+                <li><strong>Updated By:</strong>{{this.updatedBy}}</li>
+            </ul>
+        
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                Deactive
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+      
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title">Alert!</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+        
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        We hope You know what you are doing!
+                        <form name="Deactivate" id="Deactivate" class="mx-auto" action="/mod/Deactivate" method="POST" style="width:80%;">
+           
+              
+             
+        
+                            <div class="form-group d-none">
+            
+                                <input type="text" name="coursename" value="{{this.coursename}}" class="form-control form-control-sm inrad" id="coursename">
+                            </div>
+                            <div class="form-group d-none">
+            
+                                <input type="text" name="domains" value="{{this.domains}}" class="form-control form-control-sm inrad" id="domains">
+                            </div>
+                            <div class="form-group d-none">
+            
+                                <input type="text" name="courseid" value="{{this.courseID}}" class="form-control form-control-sm inrad" id="courseid">
+                            </div>
+                            <div class="form-group d-none">
+            
+                                <input type="text" name="updatedby" value="{{this.updatedBy}}" class="form-control form-control-sm inrad" id="updatedby">
+                            </div>
+           
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger ml-auto" data-dismiss="modal">Cancel</button>
+                                <button style="margin-right:5px;width:40%;" type="submit" class="btn btn-success pull-right">Continue</button>
+                            </div>     
+                        </form>
+                    </div>
+        
+                    
+        
+                </div>
+                </div>
+            </div>
+         
+        </li>
+        
+
+    </a>
+    
+{{/each}}
+<br><br>
+
+</div>

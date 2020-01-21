@@ -1,0 +1,181 @@
+<!-- Links -->
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+<!-- #region  Style -->
+<style>
+    .inrad {
+        border-radius: 10px;
+    }
+
+    .error {
+        padding-top: 2%;
+        color : red;
+    }
+</style>
+<!-- #endregion -->
+
+<!-- #region FORM -->
+<div class="container font-weight-bold mt-4" style="border-radius:25px; margin-bottom:20px;background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);font-family: 'Raleway', sans-serif; font-size :18px;width : 70%;padding:4% 8%;margin-top:auto;background-color:white;">
+    
+    <!-- #region FORM BRAND -->
+    <h1 class="mx-auto text-center" style="padding-bottom:5%;">Student Registration</h1>
+    <!-- #endregion -->
+        <form name="studentRegister" id="studentRegister" class="mx-auto" action="/student/register" method="POST" style="width:80%;">
+        <!-- NAME -->
+        <div class="form-group">
+            <label for="name">Name</label>
+         <input type="text" name="name" class="form-control form-control-sm inrad" id="name" placeholder="Enter Full Name...">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control form-control-sm inrad" id="email" placeholder="Enter Email">
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+         <label for="pass1">Password</label>
+         <input type="password" name="pass1" class="form-control form-control-sm inrad"  id="pass1" placeholder="Password">
+         <small id="passhelp" class="form-text text-muted" >
+            At least 8 characters and 1 digit
+         </small>
+        </div>
+
+        <!-- Re-Enter Password -->
+        <div class="form-group">
+         <label for="pass2">Re-Enter Password</label>
+         <input type="password" name="pass2" class="form-control form-control-sm inrad" onkeyup="Check();" id="pass2" placeholder="Password">
+         <span id="message" class="form-text"></span>
+        </div>
+
+        <!-- Mobile -->
+        <div class="form-group">
+          <label>Mobile</label>
+          <input type="text" name="mobile1" class="form-control form-control-sm inrad" id="mobile" placeholder="Enter Mobile Number" >
+        </div>
+        <!-- Mobile -->
+        <div class="form-group">
+          <label>Mobile</label>
+          <input type="text" name="mobile2" class="form-control form-control-sm inrad" id="mobile" placeholder="Enter Alternative Mobile Number" >
+          <small id="optional" class="form-text text-muted" >
+            Optional
+         </small>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label>Residential Address</label>
+          <textarea name="address" class="form-control form-control-sm inrad" id="message" placeholder="Enter Address .." width="100%" cols="40" rows="5"></textarea>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control moderatormoderatormoderatormoderatormoderatormoderatormoderatorform-control-sm inrad" name="gender" id="gender">
+                <option>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+
+        <!-- Profession -->
+        <div class="form-group">
+            <label for="profession">Profession</label>
+            <select class="form-control form-control-sm inrad" name="profession" id="profession">    
+                <option>Select an Option</option>
+                <option value="student">Student</option>
+                <option value="service">Service</option>
+                <option value="business">Business</option>
+                <option value="others">Other(s)</option>
+            </select>
+        </div>
+
+        <div class="form-group" id="inputArea">
+            <!--Dynamic Dropdown -->
+        </div>
+
+            <!-- Script for Dynamic Dropdown -->
+            <script>
+             $("#profession").change(function() {
+                         var htmlString = "";
+                         var option = $(this).val();
+                //Student
+                         if (option=="student") {
+                            //Institute Name
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Institute Name</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='instituteName' placeholder='Enter Institute Name'>";
+                            htmlString += "</div>";
+                            //Degree htmlString += "<div class='form-group'>";
+                            //htmlString += "<label>Institute Name</label>";
+                            //htmlString += "<input type='text' class='form-control form-control-sm inrad' name='instituteName' placeholder='Enter Institute Name'>";
+                            //htmlString += "</div>";
+                            //Degree
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Degree</label>";
+                            htmlString += "<select class='form-control form-control-sm inrad' name='degree' form-control-sm inrad' id='degree'> ";
+                            htmlString += "    <option>Select a Degree</option> ";
+                            htmlString += "    <option value='btech'>B.Tech</option> ";
+                            htmlString += "    <option value='bsc'>B.Sc</option> ";
+                            htmlString += "    <option value='bba'>BBA</option> ";
+                            htmlString += "    <option value='bcom'>B.Com</option> ";
+                            htmlString += "    <option value='mtech'>M.Tech</option> ";
+                            htmlString += "</select>";
+                            htmlString += "</div>";
+                            //Year of Passing
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Year Of Passing</label>";
+                            htmlString += "<input class='form-control form-control-sm inrad' id='passingYear' name='passingYear' type='month'>";
+                        }
+                //Service
+                        if (option=="service") {
+                            //Department
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Department</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='department' placeholder='Enter Department'>";
+                            htmlString += "</div>";                            
+                        }
+                //Business
+                        if (option=="business") {
+                            //Company Name
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Company Name</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='companyName' placeholder='Enter Company Name'>";
+                            htmlString += "</div>";
+                        }
+                //Others
+                        if (option=="others") {
+                            //Specify it
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Specify it</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='specify' placeholder='Please specify..'>";
+                            htmlString += "</div>";
+                        }
+
+
+                $("#inputArea").html(htmlString);
+
+
+                });  
+            </script> 
+            
+        <!-- Profession End -->
+
+        <!-- Submit Button -->        
+        <button style="margin-top:5px;width:100%" type="submit" class="btn btn-success">Register</button>        
+     
+        <!-- Terms of service -->
+        <hr>
+        <p class="text-center">By clicking
+        <em>Sign up</em> you agree to our <a href="" target="_blank">terms of service</a></p>
+    </form>
+
+    <!-- #region Validation-->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="/js/formValidationAg.js"></script>
+    <!-- #endregion Validation -->
+
+    <!-- FORM END -->
+</div>

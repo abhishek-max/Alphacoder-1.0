@@ -1,0 +1,43 @@
+{{!-- <form name="AccountVerification" id="AccountVerification" class="mx-auto" action="/mod/Verified" method="POST" style="width:80%;">
+<ol> --}}
+    <div class="container">
+        <ol>
+{{#each list}}
+
+    <div class="jumbotron" style="height: 50%">
+    
+        <li><br>
+         <ul style="list-style-type:circle">
+             <li>Email : {{this.email}}</li>
+             <li>Name : {{this.name}}</li>
+             <li>Mobile : {{this.mobile1}}</li>
+             <li>Email Verified : {{this.emailVerified}}</li>
+         </ul>
+             
+        <form name="AccountVerification" id="AccountVerification" class="mx-auto" action="/mod/Verified" method="POST" style="width:80%;">
+           
+              
+             
+        <!-- NAME -->
+        <div class="form-group d-none">
+            
+         <input type="email" name="email" value="{{this.email}}" class="form-control form-control-sm inrad" id="account">
+        </div>
+        <div class="form-group d-none">
+            
+         <input type="text" name="account" value="true" class="form-control form-control-sm inrad" id="account">
+        </div>
+        <button style="margin-right:5px;width:20%;" type="submit" class="btn btn-success pull-right">Verify</button>        
+              
+        <!--<a href="Verified/mentors/{{this.email}}" class="btn btn-success">Verify</a> -->
+         
+        </li>
+        
+</form>
+   
+    
+    </div>
+
+{{/each}}
+</ol>
+</div>

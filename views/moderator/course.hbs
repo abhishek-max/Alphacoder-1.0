@@ -1,0 +1,21 @@
+<div class="container bg-light p-4" style="border-radius:15px;width:80%;min-height: 80vh">
+    <h2 class="h2 text-center">Add New Course</h2>
+    <form class="p-4" action="/mod/course" method="POST">
+    <div class="form-group">
+        <label>Course Name</label>    
+    <input type="text" class="form-control" name="courseName" placeholder="Enter New Course" required=''>
+  </div>
+
+  <div class="form-group">
+      <label>Domains</label>
+    <input type="text" class="form-control" name="domains" placeholder="Enter New Domain with space in between EX:(java,python)" required>
+  </div>
+
+  <div class="form-group">
+      <label>Course ID</label>
+    <input type="text" class="form-control" name="courseID" placeholder="Enter Course ID">
+  </div>
+      <button class="btn btn-success">+ Add Course</button>
+
+    </form>
+</div>

@@ -1,0 +1,38 @@
+{{#each list}}
+<a class="btn btn-light" style="color: black !important">
+    <p><strong>Course Name:</strong>{{this.coursename}}</p><br>
+    <!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  View
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><strong>Information</strong></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <p><strong>Course Name:</strong>{{this.coursename}}</p>
+          <p><strong>Domains:</strong>{{this.domain}}</p>
+          <p><strong>Course ID:</strong>{{this.courseID}}</p>
+          <p><strong>Updated By:</strong>{{this.updatedBy}}</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</a>
+{{/each}}

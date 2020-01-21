@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">  
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#330867">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#330867">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#330867">
+
+    <style>
+      /* Change Selection Text Color When Highlighting */ 
+      ::-moz-selection { background-color: #ff000081; 
+      color: #fff; } 
+      ::selection { background-color: #ff000081; 
+      color: #fff; }
+    </style>
+
+    <title>Learnabyte | {{title}}</title>
+
+</head>
+
+<body style="
+background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+display : block;
+background-attachment:fixed;
+height:100vh;
+margin:0; padding: 0;
+padding-top:20px;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">
+    <!--Navabar-->
+    <nav class="navbar navbar-expand-sm navbar-dark mr-auto justify-content-center align-self-center" style="padding: auto;padding-left: 100px;margin-right:0;padding-top: 5px;">
+        <!--Brand-->
+        <a class="navbar-brand mx-auto m-0 p-0" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 36px;" href="/">Learnabyte</a>
+
+        <!--Toggle-->
+        <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" style="margin-right : 10px;" data-toggle="collapse" data-target="#navlinks">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navlinks -->
+        <div class="collapse navbar-collapse ml-auto" style="padding-right : 100px;" id="navlinks">
+        <ul class="navbar-nav ml-auto justify-content-center" style="margin-top:auto; font-family: 'ZCOOL XiaoWei', serif; font-size: 16px;text-align: center;">
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 20px; padding-right: 20px; color :#ffffff;" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 20px; padding-right: 20px; color :#ffffff;" href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="padding-right: 20px; padding-right: 20px; color :#ffffff;" href="#">About Us</a>
+          </li>
+
+          {{#if user}}
+          <li>
+             <a class="btn btn-danger navbar-btn" onclick="location.href='/logout';" style="color:#fff;font-family: 'ZCOOL XiaoWei', serif;font-size: 16px;margin-right:20px">Logout</a>
+          </li>
+
+          {{else}}          
+          <li>
+             <a class="btn btn-success navbar-btn" onclick="location.href='/login';" style="color:#fff;font-family: 'ZCOOL XiaoWei', serif;font-size: 16px;margin-right:20px">Log In</a>
+          </li>
+          <li>
+            <a style="color:#fff;font-family: 'ZCOOL XiaoWei', serif;font-size: 16px;" onclick="location.href='/signup';" class="btn btn-primary navbar-btn">Registration</a>
+          </li>
+          {{/if}}
+        </ul>
+        
+        </div>
+      <!-- Navlinks End -->    
+    </nav>
+
+    <hr style="  border:0;
+                 height : 2px;
+                 width : 90%;
+                 background: linear-gradient(to right, rgba(51,8,103,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 75%, rgba(51,8,103,1) 100%);">
+    <!--Navabar End-->
+
+
+    <!--Content-->
+<div class="container" style="height:82vh;">
+
+    <div>
+      {{!-- flash msg --}}
+
+      {{#if success_msg}}
+      <div>
+                  <h6 class="alert alert-success">{{success_msg}}</h6>
+      </div>
+      {{/if}}    
+
+      {{#if errror_msg}}
+      <div>
+                  <h6 class="alert alert-danger">{{errror_msg}}</h6>
+      </div>
+      {{/if}}    
+
+      {{#if error}}
+      <div>
+                  <h6 class="alert alert-danger">{{error}}</h6>
+      </div>
+      {{/if}}    
+
+    </div>
+    {{{body}}}
+
+</div>
+    <!-- Content End -->   
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small footer-copyright text-center py-3" style="min-height:82vh;background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);">
+      © 2019 Copyright:
+      <a href="/"> Learnabyte </a>
+    </footer>
+    <!-- Footer End -->
+</body>
+</html>

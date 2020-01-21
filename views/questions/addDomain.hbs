@@ -1,0 +1,189 @@
+<div class="container bg-light p-4" style="border-radius:15px;width:80%;min-height: 80vh">
+    <h2 class="h2 text-center">Add New Domain & Question</h2>
+    <form class="p-4" action="/mod/addDomain" encType="multipart/form-data" method="POST">
+    <div class="form-group">
+        <label>Domain</label>    
+    <input type="text" class="form-control" name="domain" placeholder="Enter New Domain" required=''>
+  </div>
+
+  <div class="form-group">
+      <label>Topic</label>
+    <input type="text" class="form-control" name="topic" placeholder="Enter New Topic" required>
+  </div>
+
+  <div class="form-group">
+      <label>Sub Topic</label>
+    <input type="text" class="form-control" name="subTopic" placeholder="Enter Subtopic">
+  </div>
+  
+  <div class="form-group">
+      <label>Question</label>
+    <input type="text" class="form-control" name="question" placeholder="Enter Question" required>
+  </div>
+
+  <div class="form-group">
+    <label for="">Upload Image?</label><span class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;*maximum size 500KB</span>
+    <br>
+    <select class="form-control form-control-sm inrad" style="width:10%" name="imgOption" id="imgOption">
+                <option>Select</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+    </select>
+  </div>
+
+    <div class="form-group" id="imgUpload">
+
+    </div> 
+
+    <div class="form-group">
+            <label for="profession">No. of Option</label>
+            <select class="form-control form-control-sm inrad" style="width:10%" name="totalOptions" id="totalOptions" required>
+                <option>Select</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+<div class="form-group" id="inputArea">
+            <!--Dynamic Dropdown -->
+        </div>
+
+
+<!-- Script for Dynamic Dropdown -->
+            <script>
+             $("#totalOptions").change(function() {
+                         var htmlString = "";
+                         var option = $(this).val();
+                //3
+                         if (option=="3") {
+                            //Total 3 option
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 1</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option1' required>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 2</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option2' required>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 3</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option3' required>";
+                            htmlString += "</div>";
+                            htmlString += "Correct option  ";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option1' value='1'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>1</label>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option2' value='2'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>2</label>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option3' value='3'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>3</label>";
+                            htmlString += "</div>";
+                        }
+                        //4
+                         if (option=="4") {
+                            //Total 4 option
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 1</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option1' required>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 2</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option2' required>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 3</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option3' required>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 4</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name=option4' required>";
+                            htmlString += "</div>";
+                            htmlString += "Correct option  ";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option1' value='1'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>1</label>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option2' value='2'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>2</label>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option3' value='3'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>3</label>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option4' value='4'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>4</label>";
+                            htmlString += "</div>";
+                        }
+                        if (option=="5") {
+                            //Total 5 option
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 1</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option1' required>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 2</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option2' required>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 3</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option3' required>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 4</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option4' required>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-group'>";
+                            htmlString += "<label>Option 5</label>";
+                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='option5' required>";
+                            htmlString += "</div>";
+                            htmlString += "Correct option  ";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option1' value='1'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>1</label>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option2' value='2'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>2</label>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option3' value='3'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>3</label>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option4' value='4'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>4</label>";
+                            htmlString += "</div>";
+                            htmlString += "<div class='form-check form-check-inline'>";
+                            htmlString += "<input class='form-check-input' type='radio' name='correctans' id='option5' value='5'>";
+                            htmlString += "<label class='form-check-label' for='inlineRadio1'>5</label>";
+                            htmlString += "</div>";
+                        }
+                $("#inputArea").html(htmlString);
+              });  
+
+            $("#imgOption").change(function() {
+                         var htmlString = "";
+                         var option = $(this).val();
+
+                         if (option=="1") {
+                            //Total 3 option
+                            htmlString += "<div style='width:30%' class='custom-file'>";
+                            htmlString += "<input type='file' class='custom-file-input' name='img' id='customFile'>";
+                            htmlString += "<label class='custom-file-label' for='customFile'>Choose file</label>";
+                            htmlString += "</div>";
+                         }                         
+                $("#imgUpload").html(htmlString);
+              });
+            </script> 
+
+    <button class="btn btn-success">+ Add Domain</button>
+
+    </form>
+</div>
