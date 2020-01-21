@@ -31,14 +31,68 @@
       color: #fff; } 
       ::selection { background-color: #ff000081; 
       color: #fff; }
+
+      {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
     </style>
 
-    <title>Netwizard | {{title}}</title>
+    <title>Alumni | {{title}}</title>
 
 </head>
 
 <body style="
-background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+background-image: linear-gradient(to top, #5bfc3a 0%, #11c9c9 100%);
 display : block;
 background-attachment:fixed;
 height:100vh;
@@ -51,7 +105,11 @@ background-size: cover;">
     <!--Navabar-->
     <nav class="navbar navbar-expand-sm navbar-dark mr-auto justify-content-center align-self-center" style="padding: auto;padding-left: 100px;margin-right:0;padding-top: 5px;">
         <!--Brand-->
-        <a class="navbar-brand mx-auto m-0 p-0" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 36px;" href="/">Netwizard</a>
+        {{#if user}}
+        <a class="navbar-brand mx-auto m-0 p-0" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 36px;" href="/dashboard">Alumni</a>
+        {{else}}
+        <a class="navbar-brand mx-auto m-0 p-0" style="font-family: 'ZCOOL XiaoWei', serif;font-size: 36px;" href="/">Alumni</a>
+        {{/if}}
 
         <!--Toggle-->
         <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" style="margin-right : 10px;" data-toggle="collapse" data-target="#navlinks">
@@ -175,7 +233,11 @@ background-size: cover;">
 
 </div>
     <!-- Content End -->   
-
+<div class="row"> 
+  <div class="column">
+    <img src="download.jpeg" style="width:100%">
+  </div>
+</div>
 
 
     <!-- Footer -->
@@ -184,5 +246,6 @@ background-size: cover;">
       <a href="/"> Netwizard </a>
     </footer>
     <!-- Footer End -->
+    
 </body>
 </html>
