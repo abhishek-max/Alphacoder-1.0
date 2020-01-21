@@ -51,12 +51,12 @@
 
         <!-- Mobile -->
         <div class="form-group">
-          <label>Mobile</label>
+          <label>Mobile Number</label>
           <input type="text" name="mobile1" class="form-control form-control-sm inrad" id="mobile" placeholder="Enter Mobile Number" >
         </div>
         <!-- Mobile -->
         <div class="form-group">
-          <label>Mobile</label>
+          <label>Mobile Number</label>
           <input type="text" name="mobile2" class="form-control form-control-sm inrad" id="mobile" placeholder="Enter Alternative Mobile Number" >
           <small id="optional" class="form-text text-muted" >
             Optional
@@ -68,6 +68,8 @@
           <label>Residential Address</label>
           <textarea name="address" class="form-control form-control-sm inrad" id="message" placeholder="Enter Address .." width="100%" cols="40" rows="5"></textarea>
         </div>
+        
+
 
         <!-- Gender -->
         <div class="form-group">
@@ -80,88 +82,48 @@
             </select>
         </div>
 
-        <!-- Profession -->
+        <!-- College name -->
         <div class="form-group">
-            <label for="profession">Profession</label>
-            <select class="form-control form-control-sm inrad" name="profession" id="profession">    
-                <option>Select an Option</option>
-                <option value="student">Student</option>
-                <option value="service">Service</option>
-                <option value="business">Business</option>
-                <option value="others">Other(s)</option>
-            </select>
+            <label for="name">College Name</label>
+         <input type="text" name="CollegeName" class="form-control form-control-sm inrad" id="name" placeholder="Enter Full College Name...">
         </div>
 
-        <div class="form-group" id="inputArea">
-            <!--Dynamic Dropdown -->
+        <!-- Depertment-->
+        <div class="form-group">
+            <label for="name">Depertment</label>
+         <input type="text" name="Depertment" class="form-control form-control-sm inrad" id="name" placeholder="Enter Full Depertment Name...">
         </div>
 
-            <!-- Script for Dynamic Dropdown -->
-            <script>
-             $("#profession").change(function() {
-                         var htmlString = "";
-                         var option = $(this).val();
-                //Student
-                         if (option=="student") {
-                            //Institute Name
-                            htmlString += "<div class='form-group'>";
-                            htmlString += "<label>Institute Name</label>";
-                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='instituteName' placeholder='Enter Institute Name'>";
-                            htmlString += "</div>";
-                            //Degree htmlString += "<div class='form-group'>";
-                            //htmlString += "<label>Institute Name</label>";
-                            //htmlString += "<input type='text' class='form-control form-control-sm inrad' name='instituteName' placeholder='Enter Institute Name'>";
-                            //htmlString += "</div>";
-                            //Degree
-                            htmlString += "<div class='form-group'>";
-                            htmlString += "<label>Degree</label>";
-                            htmlString += "<select class='form-control form-control-sm inrad' name='degree' form-control-sm inrad' id='degree'> ";
-                            htmlString += "    <option>Select a Degree</option> ";
-                            htmlString += "    <option value='btech'>B.Tech</option> ";
-                            htmlString += "    <option value='bsc'>B.Sc</option> ";
-                            htmlString += "    <option value='bba'>BBA</option> ";
-                            htmlString += "    <option value='bcom'>B.Com</option> ";
-                            htmlString += "    <option value='mtech'>M.Tech</option> ";
-                            htmlString += "</select>";
-                            htmlString += "</div>";
-                            //Year of Passing
-                            htmlString += "<div class='form-group'>";
-                            htmlString += "<label>Year Of Passing</label>";
-                            htmlString += "<input class='form-control form-control-sm inrad' id='passingYear' name='passingYear' type='month'>";
-                        }
-                //Service
-                        if (option=="service") {
-                            //Department
-                            htmlString += "<div class='form-group'>";
-                            htmlString += "<label>Department</label>";
-                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='department' placeholder='Enter Department'>";
-                            htmlString += "</div>";                            
-                        }
-                //Business
-                        if (option=="business") {
-                            //Company Name
-                            htmlString += "<div class='form-group'>";
-                            htmlString += "<label>Company Name</label>";
-                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='companyName' placeholder='Enter Company Name'>";
-                            htmlString += "</div>";
-                        }
-                //Others
-                        if (option=="others") {
-                            //Specify it
-                            htmlString += "<div class='form-group'>";
-                            htmlString += "<label>Specify it</label>";
-                            htmlString += "<input type='text' class='form-control form-control-sm inrad' name='specify' placeholder='Please specify..'>";
-                            htmlString += "</div>";
-                        }
+        <!-- Roll Number-->
+        <div class="form-group">
+            <label for="name">Roll Number</label>
+         <input type="text" name="RollNumber" class="form-control form-control-sm inrad" id="name" placeholder="Enter Roll Number...">
+        </div>
+
+        <!-- Registration Number -->
+        <div class="form-group">
+            <label for="name">Registration Number</label>
+         <input type="text" name="RegistrationNumber" class="form-control form-control-sm inrad" id="name" placeholder="Enter Registration Number...">
+        </div>
+        <!-- Facebook-->
+        <div class="form-group">
+            <label for="name">Facebook Profile Link </label>
+         <input type="text" name="FacebookProfileLink" class="form-control form-control-sm inrad" id="name" placeholder="Enter Facebook profile Link...">
+        </div>
+
+        <!-- Twitter -->
+        <div class="form-group">
+            <label for="name">Twitter Profile Link </label>
+         <input type="text" name="TwitterProfileLink" class="form-control form-control-sm inrad" id="name" placeholder="Enter Twitter Profile Link...">
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="form-group">
+            <label for="name">LinkedIn Profile Link </label>
+         <input type="text" name="LinkedInProfileLink" class="form-control form-control-sm inrad" id="name" placeholder="Enter Twitter Profile Link...">
+        </div>
 
 
-                $("#inputArea").html(htmlString);
-
-
-                });  
-            </script> 
-            
-        <!-- Profession End -->
 
         <!-- Submit Button -->        
         <button style="margin-top:5px;width:100%" type="submit" class="btn btn-success">Register</button>        
